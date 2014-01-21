@@ -76,9 +76,24 @@
                     <view key="view" contentMode="scaleToFill" id="c2D-Sy-gUp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOV-2V-3co">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="FOV-2V-3co" secondAttribute="bottom" id="48W-nn-iwh"/>
+                            <constraint firstAttribute="trailing" secondItem="FOV-2V-3co" secondAttribute="trailing" id="6ZU-Ya-Uu5"/>
+                            <constraint firstItem="FOV-2V-3co" firstAttribute="top" secondItem="c2D-Sy-gUp" secondAttribute="top" id="DvQ-MT-qTl"/>
+                            <constraint firstItem="FOV-2V-3co" firstAttribute="leading" secondItem="c2D-Sy-gUp" secondAttribute="leading" id="OdF-Q8-EFC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HQx-Dz-wzt"/>
+                    <connections>
+                        <outlet property="scrollView" destination="FOV-2V-3co" id="Km7-Yf-vj7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vuz-f8-YvM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
