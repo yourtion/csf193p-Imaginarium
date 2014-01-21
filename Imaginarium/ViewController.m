@@ -7,23 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "imageViewController.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-
-- (void)viewDidLoad
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if ([segue.destinationViewController isKindOfClass:[imageViewController class]]) {
+        imageViewController *ivc = (imageViewController *)segue.destinationViewController;
+        ivc.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://images.apple.com/v/iphone-5s/gallery/b/images/download/%@.jpg", segue.identifier]];
+        ivc.title = segue.identifier;
+    }
 }
 
 @end
